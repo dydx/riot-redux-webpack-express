@@ -1,9 +1,8 @@
 <sample-output>
-  <p>This is sample output</p>
+  <h1>{this.opts.store.getState().title}</h1>
+  <p>{this.opts.store.getState().description}</p>
 
   <script>
-    this.on('mount', function () {
-      console.log('component mounted');
-    });
+    this.opts.store.subscribe(() => this.update());
   </script>
 </sample-output>
